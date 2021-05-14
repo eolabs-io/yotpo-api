@@ -2,7 +2,10 @@
 
 namespace EolabsIo\YotpoApi;
 
+use EolabsIo\YotpoApi\Yotpo;
 use Illuminate\Support\ServiceProvider;
+use EolabsIo\YotpoApi\Domain\Storefront\Review;
+use EolabsIo\YotpoApi\Domain\Storefront\Providers\EventServiceProvider as ReviewEventServiceProvider;
 
 class YotpoApiServiceProvider extends ServiceProvider
 {
@@ -11,36 +14,18 @@ class YotpoApiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*
-         * Optional methods to load your package assets
-         */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'yotpo-api');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'yotpo-api');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
         if ($this->app->runningInConsole()) {
+            if (Yotpo::$runsMigrations) {
+                $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+            }
+
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('yotpo-api.php'),
-            ], 'config');
+                __DIR__.'/../database/migrations' => database_path('migrations/yotpo'),
+            ], 'yotpo-migrations');
 
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/yotpo-api'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/yotpo-api'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/yotpo-api'),
-            ], 'lang');*/
-
-            // Registering package commands.
-            // $this->commands([]);
+            $this->publishes([
+                __DIR__.'/../config/yotpo.php' => config_path('yotpo.php'),
+            ], 'yotpo-config');
         }
     }
 
@@ -49,12 +34,14 @@ class YotpoApiServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->register(ReviewEventServiceProvider::class);
+
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'yotpo-api');
+        $this->mergeConfigFrom(__DIR__.'/../config/yotpo.php', 'yotpo');
 
         // Register the main class to use with the facade
-        $this->app->singleton('yotpo-api', function () {
-            return new YotpoApi;
+        $this->app->singleton('yotpo-api-review', function () {
+            return new Review;
         });
     }
 }

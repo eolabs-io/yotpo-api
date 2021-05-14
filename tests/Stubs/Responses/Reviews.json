@@ -1,0 +1,84 @@
+{
+    "status":{
+       "code":200,
+       "message":"OK"
+    },
+    "response":{
+       "pagination":{
+          "page":2,
+          "per_page":5,
+          "total":9
+       },
+       "bottomline":{
+          "total_review":11,
+          "average_score":4.81818,
+          "star_distribution":{
+             "4":2,
+             "5":9,
+             "1":0,
+             "2":0,
+             "3":0
+          },
+          "custom_fields_bottomline":null
+       },
+       "products":[
+          {
+             "id":13,
+             "domain_key":"412790437",
+             "name":"Yotpo Mug",
+             "social_links":{
+                "facebook":"https://yotpo.com/go/r1wYoVa9",
+                "twitter":"https://yotpo.com/go/pg4zelyR",
+                "linkedin":"https://yotpo.com/go/6PvD9jsG",
+                "google_oauth2":"https://yotpo.com/go/srIsHCrr"
+             },
+             "embedded_widget_link":"https://yotpo.com/go/mjbdNtvQ",
+             "testimonials_product_link":"https://yotpo.com/go/45Vp7nuj",
+             "product_link":"https://yotpo.com/go/lnhRGFr0"
+          }
+       ],
+       "product_tag":[],
+       "reviews":[
+          {
+             "id":110,
+             "score":5,
+             "votes_up":1,
+             "votes_down":0,
+             "content":"Great mug",
+             "title":"Perfect",
+             "sentiment": 0.852,
+             "created_at":"2016-06-16T12:16:05.354Z",
+             "verified_buyer":true,
+             "source_review_id":null,
+             "custom_fields":null,
+             "product_id":13,
+             "deleted": false,
+             "images_data":[
+                {
+                    "id": 13,
+                    "thumb_url": "http://s3.amazonaws.com/yotpo-images-test/Review/29/13/square.jpeg?1457513657",
+                    "original_url": "http://s3.amazonaws.com/yotpo-images-test/Review/29/13/original.jpeg?1457513657"
+                },
+                {
+                    "id": 14,
+                    "thumb_url": "http://s3.amazonaws.com/yotpo-images-test/Review/29/14/square.jpeg?1457513714",
+                    "original_url": "http://s3.amazonaws.com/yotpo-images-test/Review/29/14/original.jpeg?1457513714"
+                }
+             ],
+             "user":{
+                "user_id":18,
+                "display_name":"John Doe",
+                "social_image":"https://ddcfq0gxiontw.cloudfront.net/images/anonymous_user.png",
+                "user_type":"User",
+                "is_social_connected":0
+             },
+             "comment": {
+                "id": 1336007,
+                "content": "Thanks for your review",
+                "created_at": "2017-05-03T07:19:25.734Z",
+                "comments_avatar": null
+              }
+          }
+       ]
+    }
+}
