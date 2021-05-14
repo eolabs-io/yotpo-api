@@ -15,19 +15,9 @@ class AssociateUserAction extends BaseAssociateAction
     protected function createItem($list)
     {
         $values = $this->getFormatedAttributes($list, new User);
-        $user = $this->model->user->fill($values);
-
-        foreach ($this->associateActions() as $associateActions) {
-            (new $associateActions($list))->execute($user);
-        }
-
-        $user->save();
+        $attributes = ['user_id' => data_get($list, 'user_id')];
+        $user = User::updateOrCreate($attributes, $values);
 
         $this->model->user()->associate($user);
-    }
-
-    protected function associateActions(): array
-    {
-        return [];
     }
 }
