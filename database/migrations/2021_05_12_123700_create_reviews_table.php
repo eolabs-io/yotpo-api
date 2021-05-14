@@ -18,7 +18,7 @@ class CreateReviewsTable extends YotpoMigration
             $table->integer('score');
             $table->integer('votes_up');
             $table->integer('votes_down');
-            $table->string('content');
+            $table->text('content');
             $table->string('title');
             $table->float('sentiment');
             $table->dateTime('created_at');
