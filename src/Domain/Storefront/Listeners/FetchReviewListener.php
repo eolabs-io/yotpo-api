@@ -1,6 +1,6 @@
 <?php
 
-namespace EolabsIo\ShopifyRestAdminApi\Domain\Orders\Listeners;
+namespace EolabsIo\YotpoApi\Domain\Storefront\Listeners;
 
 use EolabsIo\YotpoApi\Domain\Storefront\Events\FetchReview;
 use EolabsIo\YotpoApi\Domain\Storefront\Jobs\PerformFetchReview;
