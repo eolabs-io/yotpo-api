@@ -28,7 +28,7 @@ class CreateReviewsTable extends YotpoMigration
             $table->unsignedBigInteger('product_id');
             $table->boolean('deleted');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('comment_id');
+            $table->unsignedBigInteger('comment_id')->nullable();
 
             // $table->timestamps();
             $table->timestamp('model_created_at')->nullable();
