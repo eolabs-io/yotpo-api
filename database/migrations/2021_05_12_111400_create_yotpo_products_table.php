@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use EolabsIo\YotpoApi\Domain\Shared\Migrations\YotpoMigration;
 
-class CreateProductsTable extends YotpoMigration
+class CreateYotpoProductsTable extends YotpoMigration
 {
     /**
      * Run the migrations.
