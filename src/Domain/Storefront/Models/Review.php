@@ -6,6 +6,7 @@ use EolabsIo\YotpoApi\Domain\Shared\Models\YotpoModel;
 use EolabsIo\YotpoApi\Database\Factories\ReviewFactory;
 use EolabsIo\YotpoApi\Domain\Storefront\Models\Comment;
 use EolabsIo\YotpoApi\Domain\Storefront\Models\Product;
+use EolabsIo\YotpoApi\Domain\Storefront\Events\ReviewWasCreated;
 
 class Review extends YotpoModel
 {
@@ -13,6 +14,15 @@ class Review extends YotpoModel
     const UPDATED_AT = 'model_updated_at';
 
     public $incrementing = false;
+
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => ReviewWasCreated::class,
+    ];
 
     /**
      * The attributes that should be cast.
