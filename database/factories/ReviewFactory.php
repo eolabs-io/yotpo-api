@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use EolabsIo\YotpoApi\Domain\Storefront\Models\User;
 use EolabsIo\YotpoApi\Domain\Storefront\Models\Review;
 use EolabsIo\YotpoApi\Domain\Storefront\Models\Product;
+use EolabsIo\YotpoApi\Domain\Storefront\Models\ReviewStatus;
 
 class ReviewFactory extends Factory
 {
@@ -40,6 +41,7 @@ class ReviewFactory extends Factory
             'deleted' => $this->faker->boolean(10),
             'user_id' => User::factory(),
             'comment_id' => Comment::factory(),
+            'review_status_id' => ReviewStatus::factory(),
         ];
     }
 }

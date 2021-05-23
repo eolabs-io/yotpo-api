@@ -56,6 +56,7 @@ class Review extends YotpoModel
         'deleted',
         'user_id',
         'comment_id',
+        'review_status_id',
     ];
 
     public function product()
@@ -71,6 +72,11 @@ class Review extends YotpoModel
     public function comment()
     {
         return $this->belongsTo(Comment::class)->withDefault();
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(ReviewStatus::class, 'review_status_id');
     }
 
     public function imagesData()

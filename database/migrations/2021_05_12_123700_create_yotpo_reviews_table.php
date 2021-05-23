@@ -29,6 +29,7 @@ class CreateYotpoReviewsTable extends YotpoMigration
             $table->boolean('deleted');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('comment_id')->nullable();
+            $table->unsignedBigInteger('review_status_id')->nullable();
 
             // $table->timestamps();
             $table->timestamp('model_created_at')->nullable();
@@ -37,6 +38,7 @@ class CreateYotpoReviewsTable extends YotpoMigration
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->foreign('comment_id')->references('id')->on('comments');
+            $table->foreign('review_status_id')->references('id')->on('review_statuses');
         });
     }
 
