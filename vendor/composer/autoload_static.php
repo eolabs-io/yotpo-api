@@ -121,6 +121,7 @@ class ComposerStaticInit6c21c871b9351c25e35bcfecb65ed5a3
             'Pest\\Init\\' => 10,
             'Pest\\Expectations\\' => 18,
             'Pest\\' => 5,
+            'PackageVersions\\' => 16,
         ),
         'O' => 
         array (
@@ -171,7 +172,11 @@ class ComposerStaticInit6c21c871b9351c25e35bcfecb65ed5a3
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
+            'Doctrine\\Deprecations\\' => 22,
+            'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -416,6 +421,10 @@ class ComposerStaticInit6c21c871b9351c25e35bcfecb65ed5a3
         array (
             0 => __DIR__ . '/..' . '/pestphp/pest/src',
         ),
+        'PackageVersions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
+        ),
         'Orchestra\\Testbench\\' => 
         array (
             0 => __DIR__ . '/..' . '/orchestra/testbench-core/src',
@@ -509,9 +518,25 @@ class ComposerStaticInit6c21c871b9351c25e35bcfecb65ed5a3
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
         ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/src',
+        ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
         ),
         'DeepCopy\\' => 
         array (
