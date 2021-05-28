@@ -6,6 +6,8 @@ use EolabsIo\YotpoApi\Domain\Shared\Models\YotpoModel;
 use EolabsIo\YotpoApi\Database\Factories\ReviewFactory;
 use EolabsIo\YotpoApi\Domain\Storefront\Models\Comment;
 use EolabsIo\YotpoApi\Domain\Storefront\Models\Product;
+use EolabsIo\YotpoApi\Domain\Storefront\Models\ImagesData;
+use EolabsIo\YotpoApi\Domain\Storefront\Models\ReviewStatus;
 use EolabsIo\YotpoApi\Domain\Storefront\Events\ReviewWasCreated;
 
 class Review extends YotpoModel
